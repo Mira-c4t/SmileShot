@@ -44,7 +44,7 @@ Unityで使用したAssetsフォルダーを有料アセットを抜いてアッ
 - :ステージ選択関連の主要な関数をまとめたスクリプトです。
 
 ## OtherScript
-- :その他のスクリプトが格納されています。
+- :その他のスクリプト。
 ### [AnimationSC.cs](/Script/AnimationSC.cs)
 - :アニメーション関連のスクリプトです。
 ### [Collider.cs](/Script/Collider.cs)
