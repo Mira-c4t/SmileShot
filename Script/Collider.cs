@@ -68,7 +68,7 @@ public class CustomCollider : MonoBehaviour
         GameObject colliderObj = collider.gameObject;
         if (colliderObj.tag == "HOLE"){
             soundSC.deaSound();
-            soundSC.downBGMPitch();
+            //soundSC.downBGMPitch();
             _smileMoveMain.deathCount++;
             _smileMoveMain.ResetPosition();
         }

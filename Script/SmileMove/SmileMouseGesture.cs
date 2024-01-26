@@ -59,25 +59,40 @@ public partial class SmileMoveMain : MonoBehaviour
     IEnumerator YourCoroutine()
     {
         bool jougen = false;
+        float timePassed = 0f;
         while (_mouseflg)
         {
-            if(jougen){_powerRate -= 0.015f;}
-            else{      _powerRate += 0.015f;}
-            if(rightWall){
-                animationSC.OnDrag(_powerRate, true);
-            }
-            else{
-                animationSC.OnDrag(_powerRate, false);
-            }
-            soundSC.longPitch(Mathf.Abs(_powerRate) + 0.1f);
-            ChangeImageStrong(_powerRate);
-            if(1 <= _powerRate){jougen = true;}
-            else if(_powerRate <= 0){jougen = false;}
+            timePassed += Time.deltaTime;
 
-            // 0.000000001f秒待機
-            yield return new WaitForSeconds(0.000000001f);
+            if (timePassed >= 0.0001f)  // 0.1秒ごとに実行
+            {
+                timePassed = 0f;  // 時間をリセット
+
+                _powerRate += jougen ? -0.015f : 0.015f;
+
+                if (rightWall)
+                {
+                    animationSC.OnDrag(_powerRate, true);
+                }
+                else
+                {
+                    animationSC.OnDrag(_powerRate, false);
+                }
+                soundSC.longPitch(Mathf.Abs(_powerRate) + 0.1f);
+                ChangeImageStrong(_powerRate);
+                if (1 <= _powerRate)
+                {
+                    jougen = true;
+                }
+                else if (_powerRate <= 0)
+                {
+                    jougen = false;
+                }
+            }
+            yield return null;  // 次のフレームまで待機
         }
     }
+
     void OnMouseDrag()
     {
         if(isPauseGame || !isStartGame || gameMode){return;}

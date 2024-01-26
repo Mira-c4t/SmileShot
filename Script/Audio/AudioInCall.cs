@@ -63,7 +63,7 @@ public partial class AudioMain : MonoBehaviour
     private void downPitch(){
         foreach(AudioSource source in AudioSources)
         {
-            changePitch(source, source.pitch - 0.1f);
+            changePitch(source, source.pitch - 0.25f);
         }
     }
     private void changePitch(AudioSource source, float pitFloat){
