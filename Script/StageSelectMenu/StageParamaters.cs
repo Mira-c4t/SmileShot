@@ -17,6 +17,13 @@ public partial class StageMain
     [SerializeField]
     private AudioMain AudioScript;
 
+    [Header("ゲーム系パネルのオブジェクト")]
+    [SerializeField]
+    private GameObject _gamingPanel;
+    [Header("サブカメラのオブジェクト")]
+    [SerializeField]
+    private GameObject _SubCamera;
+
     [Header("ステージ番号")]
     [SerializeField]
     private int _stageInt;

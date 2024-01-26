@@ -64,7 +64,7 @@ public partial class SmileMoveMain : MonoBehaviour
         {
             timePassed += Time.deltaTime;
 
-            if (timePassed >= 0.0001f)  // 0.1秒ごとに実行
+            if (timePassed >= 0.000000001f)  // 0.000000001f秒ごとに実行
             {
                 timePassed = 0f;  // 時間をリセット
 
@@ -72,10 +72,12 @@ public partial class SmileMoveMain : MonoBehaviour
 
                 if (rightWall)
                 {
+                    gaugeInsideImage.fillOrigin = (int)Image.OriginVertical.Bottom;
                     animationSC.OnDrag(_powerRate, true);
                 }
                 else
                 {
+                    gaugeInsideImage.fillOrigin = (int)Image.OriginVertical.Top;
                     animationSC.OnDrag(_powerRate, false);
                 }
                 soundSC.longPitch(Mathf.Abs(_powerRate) + 0.1f);

@@ -4,6 +4,17 @@ using UnityEngine;
 
 public partial class SmileMoveMain : MonoBehaviour
 {
+    private void CheckInstance()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void SpeedCheck()
     {
         if(isPauseGame){ return;}

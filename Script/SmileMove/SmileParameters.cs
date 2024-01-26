@@ -19,12 +19,24 @@ public partial class SmileMoveMain : MonoBehaviour
     GameObject smileBall;
 
     [SerializeField]
+    [Header("ポーズボタン")]
+    GameObject pauseButton;
+
+    [SerializeField]
+    [Header("ゲージイメージ")]
+    GameObject gaugeImage;
+
+    [SerializeField]
+    [Header("サイドカメラ")]
+    GameObject SubCamera;
+
+    [SerializeField]
     [Header("飛ばす力(デフォルト値 8)")]
     float power = 8.0f;
 
     [SerializeField]
     [Header("フレームレート制限値")]
-    int targetFrameRate = 120;
+    int targetFrameRate = 60;
 
     [SerializeField]
     [Header("サウンドスクリプト")]
@@ -49,6 +61,8 @@ public partial class SmileMoveMain : MonoBehaviour
     [SerializeField]
     [Header("ゲームモードのbool")]
     public bool gameMode = true;
+
+    public static SmileMoveMain instance;
 
 
     [Header("_________________________")]
@@ -78,7 +92,7 @@ public partial class SmileMoveMain : MonoBehaviour
     private Vector2 _mousePos;
 
     [SerializeField]
-    private Vector3 _ResetPos = new Vector3(-3.5f, 116.0f, 9.8f);
+    private Vector3 _ResetPos = new Vector3(-7.25f, 114.91f, 9.8f);
     [SerializeField]
     private Vector3 _destination;
 

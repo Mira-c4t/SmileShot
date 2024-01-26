@@ -28,12 +28,16 @@ public partial class SmileMoveMain : MonoBehaviour
         selectSC.GoalLetsGo();
     }
     public void gameStart_onsmileScript(){
-        gaugeOutsideObject.SetActive(true);
+        gaugeImage.SetActive(true);
+        pauseButton.SetActive(true);
+        SubCamera.SetActive(true);
         smileBall.SetActive(true);
         isStartGame = true;
     }
     public void gameStop_onsmileScript(){
-        gaugeOutsideObject.SetActive(false);
+        gaugeImage.SetActive(false);
+        pauseButton.SetActive(false);
+        SubCamera.SetActive(false);
         smileBall.SetActive(false);
         isStartGame = false;
     }

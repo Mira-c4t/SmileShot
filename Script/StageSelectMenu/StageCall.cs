@@ -7,8 +7,14 @@ public partial class StageMain : MonoBehaviour
     public void PressEscape()
     {
         AudioScript.PressEscapeSound();
-        if(isPauseGame){ResumeGame();return;}
-        else{PauseGame();return;}
+        if(isPauseGame){
+            ResumeGame();
+            return;
+        }
+        else{
+            PauseGame();
+            return;
+        }
     }
     public void GoalLetsGo()
     {

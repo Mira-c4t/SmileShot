@@ -48,6 +48,7 @@ public partial class StageMain : MonoBehaviour
     }
     private void StartGame(){
         AudioScript.GameBGM_Start();
+        Time.timeScale = 1;
         _smileBallSC.gameStart_onsmileScript();
     }
     private void StopGame(){
@@ -57,6 +58,8 @@ public partial class StageMain : MonoBehaviour
     }
     private void PauseGame()
     {
+        _SubCamera.SetActive(false);
+        _gamingPanel.SetActive(false);
         _PausePanel.SetActive(true);
         AudioScript.PauseBGM_Start();
         AudioScript.Gorogoro_Stop();
@@ -67,6 +70,8 @@ public partial class StageMain : MonoBehaviour
     }
     private void ResumeGame()
     {
+        _SubCamera.SetActive(true);
+        _gamingPanel.SetActive(true);
         _PausePanel.SetActive(false);
         AudioScript.PauseBGM_Stop();
         AudioScript.GameBGM_UnPause();

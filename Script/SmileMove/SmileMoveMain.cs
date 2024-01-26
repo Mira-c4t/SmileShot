@@ -5,9 +5,11 @@ using UnityEngine;
 public partial class SmileMoveMain : MonoBehaviour
 {
     void Awake(){
+        CheckInstance();
         // スマイルボディにリジッドボディを設定
         _smileBody = smileBall.GetComponent<Rigidbody2D>();
         // アプリケーションのフレームレート最大値を制限
+        QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = targetFrameRate;
         // フレームレートの経過時間の設定
         _deltaTime = 0.0f;
